@@ -65,22 +65,13 @@ Diagram matching the implemented setup:
   <img width="1595" height="754" alt="nat-gateway" src="https://github.com/user-attachments/assets/899864f2-b728-497a-97fb-15cd415cde95" />
 
 
-## Connectivity Test
 
-Verified the secure design with test EC2 instances:
-
-**Private Subnet Test**:
-- Instance launched in `capaciti-project-private-subnet` (no public IP)
-- Outbound access via NAT:  
- 
-  curl ifconfig.me    # Returns NAT Gateway's Elastic IP
-  ping google.com     # Success
 
   ## Connectivity Test – Public Subnet Focus
  
  **public subnet** (direct internet access via IGW):
 
-- Instance: `test-public-ec2` (or similar)
+- Instance: `test-public-ec2` 
 - Subnet: `capaciti-project-public-subnet` (10.0.25.0/24)
 - Auto-assign Public IP: Enabled (public IPv4 address assigned)
 - Security Group: SSH (port 22) allowed from my IP
